@@ -1,0 +1,28 @@
+<html lang="eng">
+    <head>
+        <link rel="stylesheet"href="{{ url_for('static',filename='style.css')}}">
+        <title>calculator</title>
+
+    </head>
+    <body>
+        <div class="calculator">
+            <h1>Simple calculator</h1>
+            <form method="POST">
+                <input type="number" name="num1" placeholder="First Number" required>
+                <input type="number" name="num2" placeholder="Second Number" required>
+                <select name="operation" required>
+                    <option value ="add">Add</option>
+                    <option value="Subract">Subract</option>
+                    <option value="Division">Division</option>
+                    <option value="multiply">Multiply</option>
+
+                </select>
+                <button type="submit">Calculate</button>
+
+            </form>
+            {% if result is not none %}
+            <h1>Result:{{result}}</h1>
+            {%endif%}
+        </div>
+    </body>
+</html>
